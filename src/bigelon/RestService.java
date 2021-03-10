@@ -16,6 +16,7 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.time.LocalDateTime;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -34,6 +35,11 @@ public class RestService {
 
   public RestService() {
     }
+  
+  public String creteURL(){
+   LocalDateTime now = LocalDateTime.now(); 
+   return "https://" + now.getDayOfMonth() + "-" + now.getMonthValue() + "-" + now.getYear() + "-" + "imagestorage.loca.lt";
+  }
   
   public String GET(String url)
   {
